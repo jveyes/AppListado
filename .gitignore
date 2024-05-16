@@ -47,3 +47,6 @@ local_settings.py
 .cache/
 .tmp/
 .temp/
+
+# Ignore database conection file
+my.cnf
