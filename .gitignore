@@ -1,0 +1,49 @@
+# Virtual environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python bytecode
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyd
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.mo
+*.compiled
+*.mypy_cache/
+*.coverage
+.coverage.*
+
+# If you're using SQLite3
+*.sqlite3
+
+# Your local settings
+local_settings.py
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*~
+.project
+.idea/
+.vscode/
+.DS_Store
+
+# Ignore cache and temporary files
+.cache/
+.tmp/
+.temp/

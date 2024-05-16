@@ -1,0 +1,72 @@
+<!-- mysql.html -->
+{% extends 'master.html' %}
+
+{% block title %}MySQL{% endblock %}
+
+{% block content %}
+
+    <h2>Resultados Base de Datos</h2>
+    <!-- Additional content for the home page -->
+
+    <table class="table table-hover table-light border border-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Bio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.bio }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <nav aria-label="...">
+        <ul class="pagination pagination-sm">
+            {% if users.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="First">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.previous_page_number }}">{{ users.previous_page_number }}</a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">{{ users.number }}</span>
+            </li>
+            
+            {% if users.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.next_page_number }}">{{ users.next_page_number }}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.paginator.num_pages }}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item disabled">
+                <span class="page-link">Total Pages: {{ users.paginator.num_pages }}</span>
+            </li>
+        </ul>
+    </nav>
+
+{% endblock %}
