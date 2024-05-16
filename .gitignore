@@ -49,4 +49,4 @@ local_settings.py
 .temp/
 
 # Ignore database conection file
-my.cnf
+/RematesNacionales/my.cnf
