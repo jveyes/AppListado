@@ -1,6 +1,6 @@
 # Virtual environment
-.env
-.venv
+*.env
+*.venv
 env/
 venv/
 ENV/
@@ -49,4 +49,4 @@ local_settings.py
 .temp/
 
 # Ignore database conection file
-/RematesNacionales/my.cnf
+*.cnf
