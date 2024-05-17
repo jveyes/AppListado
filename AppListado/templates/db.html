@@ -1,12 +1,93 @@
-<!-- db.html -->
-{% extends 'master.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Remates Nacionales{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
 
-{% block title %}BASE DE DATOS{% endblock %}
 
-{% block content %}
-
-    <h2>Conexion Base de Datos</h2>
+<div class="container">
+    <header><br>
+    <h2>LISTADO INMUEBLES Y PROCESOS</h2>
     <!-- Additional content for the home page -->
-    AQUI VA LA BASE DE DATOS
 
-{% endblock %}
+    <!-- Search form -->
+    <form method="get" action="." class="row g-2 align-items-center">
+        <div class="col-auto">
+            <input type="text" class="form-control form-control-sm" name="q" placeholder="Buscar usuario" value="{{ request.GET.q }}">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary btn-sm" type="submit">Buscar</button>
+        </div>
+    </form>
+    <br>
+
+    <table class="table table-hover table-light border border-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>USUARIO</th>
+                <th>EMAIL</th>
+                <th>CONTRASEÑA</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>REF. CATASTRAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ user.bio|urlencode }}&selecBusqueda=1" target="_blank">{{ user.bio }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <nav aria-label="...">
+        <ul class="pagination pagination-sm">
+            {% if users.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="First">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.previous_page_number }}">{{ users.previous_page_number }}</a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">{{ users.number }}</span>
+            </li>
+            
+            {% if users.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.next_page_number }}">{{ users.next_page_number }}</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ users.paginator.num_pages }}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item disabled">
+                <span class="page-link">Total Pages: {{ users.paginator.num_pages }}</span>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+</div>
+
+</body>
+</html>

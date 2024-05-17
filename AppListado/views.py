@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Users
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.views.decorators.cache import cache_page
+#from django.views.decorators.cache import cache_page
 
 # PAGINA --> index.html
 def index(request):
@@ -9,10 +9,33 @@ def index(request):
 
 # PAGINA --> db.html
 def db(request):
-    return render(request, 'db.html')
+    query = request.GET.get('q')
+    if query:
+        users = Users.objects.filter(username__icontains=query)
+    else:
+        users = Users.objects.all()
+    
+    paginator = Paginator(users, 15)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    return render(request, 'db.html', {'users': page_obj})
 
-@cache_page(60*15)
-# PAGINA --> mysql.html
+#@cache_page(60*15)
+def mysql(request):
+    query = request.GET.get('q')
+    if query:
+        users = Users.objects.filter(username__icontains=query)
+    else:
+        users = Users.objects.all()
+    
+    paginator = Paginator(users, 15)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    return render(request, 'mysql.html', {'users': page_obj})
+
+""" # PAGINA --> mysql.html
 def mysql(request):
     users = Users.objects.all()
 
@@ -29,7 +52,7 @@ def mysql(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         users = paginator.page(paginator.num_pages)
 
-    return render(request, 'mysql.html', {'users': users})
+    return render(request, 'mysql.html', {'users': users}) """
 
 # DATABASE REMOTE SERVER
 #def mysql(request):
