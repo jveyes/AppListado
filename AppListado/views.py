@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def index(request):
     return render(request, 'index.html')
 
+
 # PAGINA --> db.html
 def db(request):
     query = request.GET.get('q')
