@@ -13,6 +13,7 @@ mysql-connector-python = "*"
 django-pagination = "*"
 redis = "*"
 django-redis = "*"
+gunicorn = "*"
 
 [dev-packages]
 

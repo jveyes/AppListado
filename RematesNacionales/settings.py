@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,8 +25,7 @@ SECRET_KEY = 'django-insecure-=fmlq+u*w0#u115iyj^1o)2z&+*^ur*la6^*+lshk)i*o-52@9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['app.rematesnacionales.com','172.26.0.27','34.192.241.59','127.0.0.1']
 
 # Application definition
 
@@ -55,8 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-INTERNAL_IPS = [																															# Agrega todo este bloque
-	"127.0.0.1",
+INTERNAL_IPS = [																														# Agrega todo este bloque
+	'127.0.0.1',
+	'172.26.0.27',
+	'34.192.241.59',
 ]
 
 ROOT_URLCONF = 'RematesNacionales.urls'
@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/home/stk/GIT/AppListado/RematesNacionales/my.cnf',
+            'read_default_file': '/home/ubuntu/AppListado/RematesNacionales/my.cnf',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
