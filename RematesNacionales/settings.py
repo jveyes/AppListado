@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # MY APPS INSTALLED
     'AppListado',		# MAIN APP
-    'debug_toolbar',		# DEBUG APP
+    'debug_toolbar',	# DEBUG APP
     'bootstrap5',		# BOOTSTRAP
+    'corsheaders',      # INSTALA DJANGO-WORDPRESS CORS
 ]
 
 MIDDLEWARE = [
@@ -47,11 +48,14 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 INTERNAL_IPS = [																														# Agrega todo este bloque
 	'127.0.0.1',
