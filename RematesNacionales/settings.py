@@ -59,13 +59,36 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
-"https://rematesnacionales.datalink.consulting",
+'https://rematesnacionales.datalink.consulting',
+'https://app.rematesnacionales.com',
+'http://localhost',
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'https://rematesnacionales.datalink.consulting',
-    'http://rematesnacionales.datalink.consulting',
-    'http://localhost'
+    'https://app.rematesnacionales.com',
+    'http://localhost',
+]
+
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'OPTIONS',
+'PATCH',
+'POST',
+'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
 ]
 
 INTERNAL_IPS = [																														# Agrega todo este bloque
