@@ -60,6 +60,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
     'https://rematesnacionales.datalink.consulting',
+    'http://localhost'
 ]
 
 INTERNAL_IPS = [																														# Agrega todo este bloque
