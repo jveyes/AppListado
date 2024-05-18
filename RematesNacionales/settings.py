@@ -57,6 +57,11 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = [
+    'https://rematesnacionales.datalink.consulting',
+    # Add any other domains as needed
+]
+
 INTERNAL_IPS = [																														# Agrega todo este bloque
 	'127.0.0.1',
 ]
