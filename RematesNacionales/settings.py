@@ -58,8 +58,14 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOWED_ORIGINS = [
+    'https://rematesnacionales.datalink.consulting',
+    'http://rematesnacionales.datalink.consulting',
+]
+
 CORS_ORIGIN_WHITELIST = [
     'https://rematesnacionales.datalink.consulting',
+    'http://rematesnacionales.datalink.consulting',
     'http://localhost'
 ]
 
