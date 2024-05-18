@@ -94,7 +94,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/home/stk/GIT/AppListado/RematesNacionales/my.cnf',
+            'read_default_file': '/home/my.cnf',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
