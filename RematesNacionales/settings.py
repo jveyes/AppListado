@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1','app.rematesnacionales.com','172.26.5.36']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',      # INSTALA DJANGO-WORDPRESS CORS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,15 +41,15 @@ INSTALLED_APPS = [
     'AppListado',		# MAIN APP
     'debug_toolbar',	# DEBUG APP
     'bootstrap5',		# BOOTSTRAP
-    'corsheaders',      # INSTALA DJANGO-WORDPRESS CORS
+    
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
