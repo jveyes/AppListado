@@ -22,7 +22,7 @@ def db(request):
     return render(request, 'db.html', {'users': page_obj})
 
 #@cache_page(60*15)
-def mysql(request):
+def applistado(request):
     query = request.GET.get('q')
     if query:
         users = Users.objects.filter(username__icontains=query)
@@ -33,7 +33,7 @@ def mysql(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
-    return render(request, 'mysql.html', {'users': page_obj})
+    return render(request, 'applistado.html', {'users': page_obj})
 
 """ # PAGINA --> mysql.html
 def mysql(request):
