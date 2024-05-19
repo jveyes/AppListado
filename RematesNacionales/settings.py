@@ -40,19 +40,27 @@ INSTALLED_APPS = [
     'AppListado',		# MAIN APP
     'debug_toolbar',	# DEBUG APP
     'bootstrap5',		# BOOTSTRAP
-    
+    'corsheaders',      # CORS AND NGINX SETUP
 ]
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',   
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'https://app.rematesnacionales.com',
+    'https://rematesnacionales.datalink.consulting',
 ]
 
 INTERNAL_IPS = [																														# Agrega todo este bloque
