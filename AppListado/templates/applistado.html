@@ -66,34 +66,34 @@
 
     <nav aria-label="...">
         <ul class="pagination pagination-sm">
-            {% if users.has_previous %}
+            {% if remate.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="?page=1" aria-label="First">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ users.previous_page_number }}">{{ users.previous_page_number }}</a>
+                    <a class="page-link" href="?page={{ remate.previous_page_number }}">{{ remate.previous_page_number }}</a>
                 </li>
             {% endif %}
             
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ users.number }}</span>
+                <span class="page-link">{{ remate.number }}</span>
             </li>
             
-            {% if users.has_next %}
+            {% if remate.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ users.next_page_number }}">{{ users.next_page_number }}</a>
+                    <a class="page-link" href="?page={{ remate.next_page_number }}">{{ remate.next_page_number }}</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ users.paginator.num_pages }}" aria-label="Last">
+                    <a class="page-link" href="?page={{ remate.paginator.num_pages }}" aria-label="Last">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             {% endif %}
             
             <li class="page-item disabled">
-                <span class="page-link">Total Pages: {{ users.paginator.num_pages }}</span>
+                <span class="page-link">Total Pages: {{ remate.paginator.num_pages }}</span>
             </li>
         </ul>
     </nav>
