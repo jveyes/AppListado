@@ -7,8 +7,8 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def index(request):
     return render(request, 'index.html')
 
-# PAGINA --> db.html
-def db(request):
+# PAGINA --> testdb.html
+def testdb(request):
     query = request.GET.get('q')
     if query:
         users = Users.objects.filter(username__icontains=query)
@@ -19,7 +19,7 @@ def db(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
-    return render(request, 'db.html', {'users': page_obj})
+    return render(request, 'testdb.html', {'users': page_obj})
 
 #@cache_page(60*15)
 def applistado(request):
