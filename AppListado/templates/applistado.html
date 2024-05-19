@@ -23,24 +23,41 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>USUARIO</th>
-                <th>EMAIL</th>
-                <th>CONTRASEÑA</th>
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
+                <th>FECHA</th>
+                <th>HORA</th>
+                <th>DEPARTAMENTO</th>
+                <th>CIUDAD</th>
+                <th>JUZGADO</th>
+                <th>Nº PROCESO</th>
+                <th>AVALUO</th>
+                <th>VALOR SUBASTA</th>
+                <th>TIPO BIEN</th>
+                <th>DIRECCION</th>
+                <th>PLACA</th>
+                <th>MATRICULA INMOBILIARIA</th>
                 <th>REF. CATASTRAL</th>
+                <th>DESCRIPCION</th>
+                <th>REFERENCIA</th>
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for remate in remates %}
                 <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.password }}</td>
-                    <td>{{ user.first_name }}</td>
-                    <td>{{ user.last_name }}</td>
-                    <td><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ user.bio|urlencode }}&selecBusqueda=1" target="_blank">{{ user.bio }}</a></td>
+                    <td>{{ remate.id }}</td>
+                    <td>{{ remate.fecha }}</td>
+                    <td>{{ remate.departamento }}</td>
+                    <td>{{ remate.ciudad }}</td>
+                    <td>{{ remate.juzgado }}</td>
+                    <td><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
+                    <td>{{ remate.avaluo }}</td>
+                    <td>{{ remate.valor_subasta }}</td>
+                    <td>{{ remate.tipo_bien }}</td>
+                    <td>{{ remate.direccion }}</td>
+                    <td>{{ remate.placa_vehiculo }}</td>
+                    <td>{{ remate.matricula_inmobiliaria }}</td>
+                    <td>{{ remate.referencia_catastral }}</td>
+                    <td>{{ remate.descripcion }}</td>
+                    <td>{{ remate.referencia }}</td>                    
                 </tr>
             {% endfor %}
         </tbody>

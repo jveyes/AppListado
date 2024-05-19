@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Users
+from .models import Users, Remates
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 #from django.views.decorators.cache import cache_page
 
@@ -25,15 +25,15 @@ def testdb(request):
 def applistado(request):
     query = request.GET.get('q')
     if query:
-        users = Users.objects.filter(username__icontains=query)
+        remates = Remates.objects.filter(username__icontains=query)
     else:
-        users = Users.objects.all()
+        remates = Remates.objects.all()
     
-    paginator = Paginator(users, 15)
+    paginator = Paginator(remates, 15)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
-    return render(request, 'applistado.html', {'users': page_obj})
+    return render(request, 'applistado.html', {'remates': page_obj})
 
 """ # PAGINA --> mysql.html
 def mysql(request):
