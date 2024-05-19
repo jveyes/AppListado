@@ -44,8 +44,8 @@
             {% for remate in remates %}
                 <tr>
                     <td>{{ remate.id }}</td>
-                    <td>{{ remate.fecha }}</td>
-                    <td>{{ remate.hora }}</td>
+                    <td>{{ remate.fecha|date:"d/m/Y" }}</td>
+                    <td>{{ remate.hora|time:"g:i A" }}</td>
                     <td>{{ remate.departamento }}</td>
                     <td>{{ remate.ciudad }}</td>
                     <td>{{ remate.juzgado }}</td>
