@@ -57,25 +57,28 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',   
 ]
 
-X_FRAME_OPTIONS = 'ALLOW-FROM https://rematesnacionales.datalink.consulting'
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
 'https://rematesnacionales.datalink.consulting',
+'https://rematesnacionales.datalink.consulting/listado-de-inmuebles/',
+'https://rematesnacionales.datalink.consulting/listado-de-inmuebles',
 'https://app.rematesnacionales.com',
+'https://app.rematesnacionales.com/',
 'http://localhost',
+'http://127.0.0.1',
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'https://rematesnacionales.datalink.consulting',
+    'https://rematesnacionales.datalink.consulting/listado-de-inmuebles/',
+    'https://rematesnacionales.datalink.consulting/listado-de-inmuebles',
     'https://app.rematesnacionales.com',
     'http://localhost',
+    'http://127.0.0.1',
 ]
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
 
