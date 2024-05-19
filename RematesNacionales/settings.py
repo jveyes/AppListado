@@ -53,21 +53,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',   
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'https://app.rematesnacionales.com',
     'https://rematesnacionales.datalink.consulting',
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'https://app.rematesnacionales.com',
     'https://rematesnacionales.datalink.consulting',
-    'localhost:8000',
-    '127.0.0.1:8000'
 )
 
 CORS_ALLOW_METHODS = [
