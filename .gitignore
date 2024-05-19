@@ -50,3 +50,4 @@ local_settings.py
 
 # Ignore database conection file
 *.cnf
+staticfiles/
