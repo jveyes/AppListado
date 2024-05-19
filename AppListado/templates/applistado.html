@@ -19,50 +19,52 @@
     </form>
     <br>
 
-    <table class="table table-hover table-light border border-2">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>FECHA</th>
-                <th>HORA</th>
-                <th>DEPARTAMENTO</th>
-                <th>CIUDAD</th>
-                <th>JUZGADO</th>
-                <th>Nº PROCESO</th>
-                <th>AVALUO</th>
-                <th>VALOR SUBASTA</th>
-                <th>TIPO BIEN</th>
-                <th>DIRECCION</th>
-                <th>PLACA</th>
-                <th>MATRICULA INMOBILIARIA</th>
-                <th>REF. CATASTRAL</th>
-                <th>DESCRIPCION</th>
-                <th>REFERENCIA</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for remate in remates %}
+    <div class="table-responsive">
+        <table class="table table-hover table-light border border-2">
+            <thead>
                 <tr>
-                    <td class="text-nowrap">{{ remate.id }}</td>
-                    <td class="text-nowrap">{{ remate.fecha|date:"d/m/Y" }}</td>
-                    <td class="text-nowrap">{{ remate.hora|time:"g:i A" }}</td>
-                    <td class="text-nowrap">{{ remate.departamento }}</td>
-                    <td class="text-nowrap">{{ remate.ciudad }}</td>
-                    <td class="text-nowrap">{{ remate.juzgado }}</td>
-                    <td class="text-nowrap"><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
-                    <td class="text-nowrap">{{ remate.avaluo }}</td>
-                    <td class="text-nowrap">{{ remate.valor_subasta }}</td>
-                    <td class="text-nowrap">{{ remate.tipo_bien }}</td>
-                    <td class="text-nowrap">{{ remate.direccion }}</td>
-                    <td class="text-nowrap">{{ remate.placa_vehiculo }}</td>
-                    <td class="text-nowrap">{{ remate.matricula_inmobiliaria }}</td>
-                    <td class="text-nowrap">{{ remate.referencia_catastral }}</td>
-                    <td class="text-nowrap">{{ remate.descripcion }}</td>
-                    <td class="text-nowrap">{{ remate.referencia }}</td>                    
+                    <th>ID</th>
+                    <th>FECHA</th>
+                    <th>HORA</th>
+                    <th>DEPARTAMENTO</th>
+                    <th>CIUDAD</th>
+                    <th>JUZGADO</th>
+                    <th>Nº PROCESO</th>
+                    <th>AVALUO</th>
+                    <th>VALOR SUBASTA</th>
+                    <th>TIPO BIEN</th>
+                    <th>DIRECCION</th>
+                    <th>PLACA</th>
+                    <th>MATRICULA INMOBILIARIA</th>
+                    <th>REF. CATASTRAL</th>
+                    <th>DESCRIPCION</th>
+                    <th>REFERENCIA</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for remate in remates %}
+                    <tr>
+                        <td class="text-nowrap">{{ remate.id }}</td>
+                        <td class="text-nowrap">{{ remate.fecha|date:"d/m/Y" }}</td>
+                        <td class="text-nowrap">{{ remate.hora|time:"g:i A" }}</td>
+                        <td class="text-nowrap">{{ remate.departamento }}</td>
+                        <td class="text-nowrap">{{ remate.ciudad }}</td>
+                        <td class="text-nowrap">{{ remate.juzgado }}</td>
+                        <td class="text-nowrap"><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
+                        <td class="text-nowrap">{{ remate.avaluo }}</td>
+                        <td class="text-nowrap">{{ remate.valor_subasta }}</td>
+                        <td class="text-nowrap">{{ remate.tipo_bien }}</td>
+                        <td class="text-nowrap">{{ remate.direccion }}</td>
+                        <td class="text-nowrap">{{ remate.placa_vehiculo }}</td>
+                        <td class="text-nowrap">{{ remate.matricula_inmobiliaria }}</td>
+                        <td class="text-nowrap">{{ remate.referencia_catastral }}</td>
+                        <td class="text-nowrap">{{ remate.descripcion }}</td>
+                        <td class="text-nowrap">{{ remate.referencia }}</td>                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <nav aria-label="...">
         <ul class="pagination pagination-sm">
