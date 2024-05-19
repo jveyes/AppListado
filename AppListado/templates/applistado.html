@@ -43,22 +43,22 @@
         <tbody>
             {% for remate in remates %}
                 <tr>
-                    <td>{{ remate.id }}</td>
-                    <td>{{ remate.fecha|date:"d/m/Y" }}</td>
-                    <td>{{ remate.hora|time:"g:i A" }}</td>
-                    <td>{{ remate.departamento }}</td>
-                    <td>{{ remate.ciudad }}</td>
-                    <td>{{ remate.juzgado }}</td>
-                    <td><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
-                    <td>{{ remate.avaluo }}</td>
-                    <td>{{ remate.valor_subasta }}</td>
-                    <td>{{ remate.tipo_bien }}</td>
-                    <td>{{ remate.direccion }}</td>
-                    <td>{{ remate.placa_vehiculo }}</td>
-                    <td>{{ remate.matricula_inmobiliaria }}</td>
-                    <td>{{ remate.referencia_catastral }}</td>
-                    <td>{{ remate.descripcion }}</td>
-                    <td>{{ remate.referencia }}</td>                    
+                    <td class="no-wrap">{{ remate.id }}</td>
+                    <td class="no-wrap">{{ remate.fecha|date:"d/m/Y" }}</td>
+                    <td class="no-wrap">{{ remate.hora|time:"g:i A" }}</td>
+                    <td class="no-wrap">{{ remate.departamento }}</td>
+                    <td class="no-wrap">{{ remate.ciudad }}</td>
+                    <td class="no-wrap">{{ remate.juzgado }}</td>
+                    <td class="no-wrap"><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
+                    <td class="no-wrap">{{ remate.avaluo }}</td>
+                    <td class="no-wrap">{{ remate.valor_subasta }}</td>
+                    <td class="no-wrap">{{ remate.tipo_bien }}</td>
+                    <td class="no-wrap">{{ remate.direccion }}</td>
+                    <td class="no-wrap">{{ remate.placa_vehiculo }}</td>
+                    <td class="no-wrap">{{ remate.matricula_inmobiliaria }}</td>
+                    <td class="no-wrap">{{ remate.referencia_catastral }}</td>
+                    <td class="no-wrap">{{ remate.descripcion }}</td>
+                    <td class="no-wrap">{{ remate.referencia }}</td>                    
                 </tr>
             {% endfor %}
         </tbody>
