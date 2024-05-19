@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # MY APPS INSTALLED
-    'corsheaders',      # INSTALA DJANGO-WORDPRESS CORS
     'AppListado',		# MAIN APP
     'debug_toolbar',	# DEBUG APP
     'bootstrap5',		# BOOTSTRAP
@@ -48,59 +47,12 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware', 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',   
-]
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOWED_ORIGINS = [
-'https://rematesnacionales.datalink.consulting',
-'https://rematesnacionales.datalink.consulting/listado-de-inmuebles/',
-'https://rematesnacionales.datalink.consulting/listado-de-inmuebles',
-'https://app.rematesnacionales.com',
-'https://app.rematesnacionales.com/',
-'http://localhost',
-'http://127.0.0.1',
-]
-
-CORS_ORIGIN_WHITELIST = [
-    'https://rematesnacionales.datalink.consulting',
-    'https://rematesnacionales.datalink.consulting/listado-de-inmuebles/',
-    'https://rematesnacionales.datalink.consulting/listado-de-inmuebles',
-    'https://app.rematesnacionales.com',
-    'http://localhost',
-    'http://127.0.0.1',
-]
-
-XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
-
-CORS_ALLOW_METHODS = [
-'DELETE',
-'GET',
-'OPTIONS',
-'PATCH',
-'POST',
-'PUT',
-]
-
-CORS_ALLOW_HEADERS = [
-'accept',
-'accept-encoding',
-'authorization',
-'content-type',
-'dnt',
-'origin',
-'user-agent',
-'x-csrftoken',
-'x-requested-with',
 ]
 
 INTERNAL_IPS = [																														# Agrega todo este bloque
@@ -182,13 +134,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-""" CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379',
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-} """
