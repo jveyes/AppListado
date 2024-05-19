@@ -66,34 +66,34 @@
 
     <nav aria-label="...">
         <ul class="pagination pagination-sm">
-            {% if remate.has_previous %}
+            {% if remates.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="?page=1" aria-label="First">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ remate.previous_page_number }}">{{ remate.previous_page_number }}</a>
+                    <a class="page-link" href="?page={{ remates.previous_page_number }}">{{ remate.previous_page_number }}</a>
                 </li>
             {% endif %}
             
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ remate.number }}</span>
+                <span class="page-link">{{ remates.number }}</span>
             </li>
             
-            {% if remate.has_next %}
+            {% if remates.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ remate.next_page_number }}">{{ remate.next_page_number }}</a>
+                    <a class="page-link" href="?page={{ remates.next_page_number }}">{{ remates.next_page_number }}</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ remate.paginator.num_pages }}" aria-label="Last">
+                    <a class="page-link" href="?page={{ remates.paginator.num_pages }}" aria-label="Last">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             {% endif %}
             
             <li class="page-item disabled">
-                <span class="page-link">Total: {{ remate.paginator.num_pages }}</span>
+                <span class="page-link">Total: {{ remates.paginator.num_pages }}</span>
             </li>
         </ul>
     </nav>
