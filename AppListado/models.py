@@ -37,4 +37,4 @@ class Remates(models.Model):
     referencia = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f"{'OK' self.numero_proceso}"
+        return f"{self.numero_proceso}"
