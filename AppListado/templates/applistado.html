@@ -1,6 +1,8 @@
 <!-- applistado.html -->
 {% extends 'master.html' %}
 
+{% load custom_filters %}
+
 {% block title %}AppListado{% endblock %}
 
 {% block content %}
@@ -51,8 +53,8 @@
                         <td class="text-nowrap">{{ remate.ciudad }}</td>
                         <td class="text-nowrap">{{ remate.juzgado }}</td>
                         <td class="text-nowrap"><a href="http://servicios.cartagena.gov.co/impuestos/generarFactura.jsp?referencia={{ remate.numero_proceso|urlencode }}&selecBusqueda=1" target="_blank">{{ remate.numero_proceso }}</a></td>
-                        <td class="text-nowrap">{{ remate.avaluo }}</td>
-                        <td class="text-nowrap">{{ remate.valor_subasta }}</td>
+                        <td class="text-nowrap">{{ remate.avaluo|currency }}</td>
+                        <td class="text-nowrap">{{ remate.valor_subasta|currency }}</td>
                         <td class="text-nowrap">{{ remate.tipo_bien }}</td>
                         <td class="text-nowrap">{{ remate.direccion }}</td>
                         <td class="text-nowrap">{{ remate.placa_vehiculo }}</td>
