@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-=fmlq+u*w0#u115iyj^1o)2z&+*^ur*la6^*+lshk)i*o-52@9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','app.rematesnacionales.com','172.26.5.36']
+#ALLOWED_HOSTS = ['127.0.0.1','app.rematesnacionales.com','172.26.5.36']
+ALLOWED_HOSTS = ['app.rematesnacionales.com',]
 
 # Application definition
 
